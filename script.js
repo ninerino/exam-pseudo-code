@@ -91,7 +91,17 @@ function play() {
 }
 
 function isValidWord(nyttOrd) {
-    RETURN ordbok.includes(nyttOrd) // Kontrollera om ordet finns i ordboken. True om det finns, false om det inte finns.
+    // Kontrollera att inmatningen är giltig
+    IF nyttOrd == NULL OR nyttOrd == '' THEN
+        RETURN FALSE // Ogiltigt om ordet är tomt eller null
+    ENDIF
+
+    // Kontrollera om ordet finns i ordboken
+    IF ordbok.includes(nyttOrd) THEN
+        RETURN TRUE
+    ELSE
+        RETURN FALSE
+    ENDIF
 }
 
 function isOneLetterApart(wordOne, wordTwo) {
