@@ -1,5 +1,7 @@
 # Exam Pseudo Code
 
+Figjam board med flödesscheman hittas [här](https://www.figma.com/board/CIzezKpW59yBs4X8qaRTIZ/exam-pseudo-code?node-id=1-227&t=9PpEZbTQNK6vn6c0-0)
+
 ## Instruktioner
 
 Pusslet går ut på att du får ett startord och ett slutord och du ska genom att byta ut bokstäver i ditt startord få det till ditt slutord med så få byten som möjligt.

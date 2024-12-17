@@ -15,12 +15,12 @@ INPUT "Ange antalet gäster" = nmbrOfGuests;
 INPUT "Ange dricks i decimal" = tipsDecimal;
 
 // Kontrollera att inmatningen är korrekt
-IF nmbrOfGuests == 0 || totalOrder == 0 THEN
-	PRINT "Antalet gäster eller order kan inte vara 0. Försök igen"
-	STOP
+IF nmbrOfGuests <= 0 || totalOrder <= 0 THEN // Kontrollerar så att det inte är 0 eller -
+	PRINT "Antalet gäster eller order måste vara mer än 0. Försök igen"
+	RETURN to Användarinmatning
 
 // Räkna ihop värde och dricks
-SET totalWithTips = totalOrder + (totalOrder * (tipsPercentage));
+SET totalWithTips = totalOrder + (totalOrder * (tipsDecimal));
 
 // Räkna ut vad varje gäst ska betala
 SET sumPerGuest = totalWithTips / nmbrOfGuests;
@@ -84,6 +84,7 @@ function play() {
             PRINT "Bra jobbat! Ditt nuvarande ord är: " + nuvarandeOrd + " och ditt slutord är: " + slutOrd
         ELSE
             PRINT "Ogiltig inmatning! Ordet måste skilja sig med exakt en bokstav och finnas i ordboken."
+            RETURN to INPUT användarInput INTO nyttOrd
         ENDIF
     ENDWHILE
 
